@@ -1,3 +1,5 @@
+require 'jwt'
+
 module CoreNutrition
   module Models
     module Omniauth
@@ -19,6 +21,13 @@ module CoreNutrition
           @attributes['token']
         end
         alias access_token token
+
+        # Returns the JWT decoded
+        #
+        # @return [Hash]
+        def jwt
+          JWT.decode(self.token, ENV['CORE_CLIENT_SECRET'], true, { algorithm: 'HS256' })
+        end
 
         # Returns the refresh token
         #

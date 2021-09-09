@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("yard")
   spec.add_development_dependency("webmock")
 
+  spec.add_dependency('jwt')
   spec.add_dependency('faraday')
   spec.add_dependency('mimemagic')
   spec.add_dependency('mime-types')

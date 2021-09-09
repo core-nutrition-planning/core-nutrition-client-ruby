@@ -6,6 +6,7 @@ PATH
       dotenv
       faraday
       faraday_middleware
+      jwt
       mime-types
       mimemagic
       multi_json
@@ -43,6 +44,7 @@ GEM
     faraday_middleware (1.1.0)
       faraday (~> 1.0)
     hashdiff (1.0.1)
+    jwt (2.2.3)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0901)
