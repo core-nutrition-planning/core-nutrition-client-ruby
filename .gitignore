@@ -11,3 +11,6 @@
 .rspec_status
 .ruby-version
 .ruby-gemset
+
+.DS_Store
+.env
