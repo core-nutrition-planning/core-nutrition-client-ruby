@@ -117,6 +117,22 @@ module CoreNutrition
       !self.pagination.nil?
     end
 
+    def scope_header_attributes
+      self.headers.fetch('x-oauth-scopes', nil)
+    end
+
+    def scope_header_attributes?
+      !self.scope_header_attributes.nil?
+    end
+
+    def scope_values
+      if self.scope_header_attributes?
+        self.scope_header_attributes.split(',')
+      else
+        []
+      end
+    end
+
     def links_header
       self.headers.fetch('link', '')
     end
