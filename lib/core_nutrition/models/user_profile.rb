@@ -40,6 +40,13 @@ module CoreNutrition
         @attributes['last_name']
       end
 
+      # Returns the full name
+      #
+      # @return [String]
+      def full_name
+        [self.first_name, self.last_name].compact.join(' ')
+      end
+
       # Returns the email
       #
       # @return [String]
@@ -98,6 +105,23 @@ module CoreNutrition
         rescue
           nil
         end
+      end
+
+      # Returns true if there is a birth date
+      #
+      # @return [Boolean]
+      def birth_date?
+        !self.birth_date.nil?
+      end
+
+      # Returns the age
+      #
+      # @return [String]
+      def age(since = Time.now.utc)
+        return nil unless self.birth_date?
+
+        now = since.to_date
+        now.year - self.birth_date.year - ((now.month > self.birth_date.month || (now.month == self.birth_date.month && now.day >= self.birth_date.day)) ? 0 : 1)
       end
 
       # Returns the created at timestamp
