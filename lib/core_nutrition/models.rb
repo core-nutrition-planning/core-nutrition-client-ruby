@@ -15,6 +15,11 @@ require File.expand_path('../models/nutrition_plan', __FILE__)
 require File.expand_path('../models/user_profiles', __FILE__)
 require File.expand_path('../models/user_profile', __FILE__)
 
+require File.expand_path('../models/health_profiles', __FILE__)
+require File.expand_path('../models/health_profile', __FILE__)
+
+require File.expand_path('../models/unit', __FILE__)
+
 # Oauth context
 require File.expand_path('../models/oauth', __FILE__)
 

@@ -11,6 +11,7 @@ PATH
       mimemagic
       multi_json
       restless_router
+      ruby-units
       terminal-table
 
 GEM
@@ -74,6 +75,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
+    ruby-units (2.3.2)
     ruby2_keywords (0.0.5)
     terminal-table (3.0.1)
       unicode-display_width (>= 1.1.1, < 3)
