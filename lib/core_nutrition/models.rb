@@ -21,6 +21,12 @@ require File.expand_path('../models/health_profile', __FILE__)
 require File.expand_path('../models/events', __FILE__)
 require File.expand_path('../models/event', __FILE__)
 
+require File.expand_path('../models/placements', __FILE__)
+require File.expand_path('../models/placement', __FILE__)
+
+require File.expand_path('../models/nutritional_values', __FILE__)
+require File.expand_path('../models/nutritional_value', __FILE__)
+
 require File.expand_path('../models/unit', __FILE__)
 
 # Oauth context

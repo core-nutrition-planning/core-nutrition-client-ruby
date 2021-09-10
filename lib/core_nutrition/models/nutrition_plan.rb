@@ -40,6 +40,14 @@ module CoreNutrition
         @event ||= CoreNutrition::Models::Events.retrieve(self.event_id)
       end
 
+      def placements(params={})
+        @placements ||= CoreNutrition::Models::Placements.list_by_nutrition_plan_id(self.id, params)
+      end
+
+      def placements?
+        self.placements.any?
+      end
+
       # Returns true if there is an event
       #
       # @return [Boolean]
