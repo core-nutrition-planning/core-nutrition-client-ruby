@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency('jwt')
   spec.add_dependency('ruby-units')
+  spec.add_dependency('timezone')
   spec.add_dependency('faraday')
   spec.add_dependency('mimemagic')
   spec.add_dependency('mime-types')

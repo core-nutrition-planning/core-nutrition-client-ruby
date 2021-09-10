@@ -13,6 +13,7 @@ PATH
       restless_router
       ruby-units
       terminal-table
+      timezone
 
 GEM
   remote: https://rubygems.org/
@@ -79,6 +80,7 @@ GEM
     ruby2_keywords (0.0.5)
     terminal-table (3.0.1)
       unicode-display_width (>= 1.1.1, < 3)
+    timezone (1.3.12)
     unicode-display_width (2.0.0)
     webmock (3.14.0)
       addressable (>= 2.8.0)

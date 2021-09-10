@@ -33,6 +33,20 @@ module CoreNutrition
         @attributes['event_id']
       end
 
+      # Returns the event model
+      #
+      # @return [CoreNutrition::Models::Event]
+      def event
+        @event ||= CoreNutrition::Models::Events.retrieve(self.event_id)
+      end
+
+      # Returns true if there is an event
+      #
+      # @return [Boolean]
+      def event?
+        !self.event.nil?
+      end
+
       # Returns the name
       #
       # @return [String]
@@ -208,6 +222,70 @@ module CoreNutrition
       # @return [String]
       def caffeine_sensitivity_category_name
         @attributes['caffeine_sensitivity_category_name']
+      end
+
+      # Returns the seconds duration
+      #
+      # @return [integer]
+      def seconds_duration
+        @attributes.fetch('seconds_duration', 0)
+      end
+
+      # Returns the expected duration name
+      #
+      # @return [String]
+      def duration_name
+        Time.at(self.seconds_duration).utc.strftime("%H:%M:%S")
+      end
+
+      # Returns the start at value
+      #
+      # @return [String, NilClass]
+      def start_at_value
+        @attributes['start_at']
+      end
+
+      # Returns the start at timestamp
+      #
+      # @return [DateTime,NilClass]
+      def start_at
+        begin
+          DateTime.parse(@attributes['start_at'])
+        rescue
+          nil
+        end
+      end
+
+      # Returns true if there is a start time
+      #
+      # @return [DateTime,NilClass]
+      def start_at?
+        !self.start_at.nil?
+      end
+
+      # Returns the end at value
+      #
+      # @return [String, NilClass]
+      def end_at_value
+        @attributes['end_at']
+      end
+
+      # Returns the end at timestamp
+      #
+      # @return [DateTime,NilClass]
+      def end_at
+        begin
+          DateTime.parse(@attributes['end_at'])
+        rescue
+          nil
+        end
+      end
+
+      # Returns true if there is a end time
+      #
+      # @return [DateTime,NilClass]
+      def end_at?
+        !self.end_at.nil?
       end
 
       # Returns the created at timestamp

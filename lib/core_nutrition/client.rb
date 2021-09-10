@@ -3,6 +3,7 @@ Dotenv.load
 
 require 'logger'
 require 'date'
+require 'timezone'
 require 'multi_json'
 require 'restless_router'
 require 'core_nutrition/client/version'
