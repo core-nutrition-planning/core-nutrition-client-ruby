@@ -74,6 +74,7 @@ module CoreNutrition
       # @return [Boolean]
       def height_unit?
         !self.height_unit.nil?
+      end
 
       # Returns the weight value
       #
