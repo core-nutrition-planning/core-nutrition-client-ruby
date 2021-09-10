@@ -51,6 +51,22 @@ module CoreNutrition
         @attributes['distance']
       end
 
+      def distance_unit_attributes
+        @attributes['distance_unit']
+      end
+
+      def distance_unit
+        begin
+          CoreNutrition::Models::Unit.new(self.distance_unit_attributes)
+        rescue ArgumentError
+          nil
+        end
+      end
+
+      def distance_unit?
+        !self.distance_unit.nil?
+      end
+
       def quantity
         @attributes['quantity']
       end
