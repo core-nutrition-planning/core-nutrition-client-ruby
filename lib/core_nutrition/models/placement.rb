@@ -67,6 +67,10 @@ module CoreNutrition
         !self.distance_unit.nil?
       end
 
+      def dosage
+        @attributes['dosage']
+      end
+
       def quantity
         @attributes['quantity']
       end
@@ -81,6 +85,10 @@ module CoreNutrition
 
       def nutritional_values?
         self.nutritional_values.any?
+      end
+
+      def to_attributes
+        @attributes
       end
     end
   end

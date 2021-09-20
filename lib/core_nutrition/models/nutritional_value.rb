@@ -38,6 +38,10 @@ module CoreNutrition
       def unit
         CoreNutrition::Models::Unit.new(self.unit_attributes)
       end
+
+      def to_attributes
+        @attributes
+      end
     end
   end
 end
