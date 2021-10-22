@@ -27,7 +27,7 @@ module CoreNutrition
       def self.retrieve(id, params={})
         raise CoreNutrition::Errors::InvalidArgumentError.new("id must be provided") if id.nil?
 
-        rel   = CoreNutrition::Client.rel_for('rels/system_of_measurement')
+        rel   = CoreNutrition::Client.rel_for('rels/system-of-measurement')
         route = CoreNutrition::Client.routes.find_by_rel(rel)
         url   = route.url_for(params.merge!(id: id.to_s))
 

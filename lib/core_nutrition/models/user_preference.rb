@@ -15,8 +15,20 @@ module CoreNutrition
       # Returns the ID
       #
       # @return [Integer]
+      def system_of_measurement_name
+        @attributes['system_of_measurement_name']
+      end
+
+      def system_of_measurement_id
+        @attributes['system_of_measurement_id']
+      end
+
       def system_of_measurement
-        @attributes['system_of_measurement']
+        @system_of_measurement ||= CoreNutrition::Models::SystemOfMeasurements.retrieve(self.system_of_measurement_id)
+      end
+
+      def system_of_measurement?
+        !self.system_of_measurement.nil?
       end
 
       # Returns the created at timestamp
