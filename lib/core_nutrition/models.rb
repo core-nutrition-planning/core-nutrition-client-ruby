@@ -48,6 +48,9 @@ require File.expand_path('../models/gender', __FILE__)
 require File.expand_path('../models/caffeine_sensitivity_categories', __FILE__)
 require File.expand_path('../models/caffeine_sensitivity_category', __FILE__)
 
+require File.expand_path('../models/carbohydrate_training_frequency_categories', __FILE__)
+require File.expand_path('../models/carbohydrate_training_frequency_category', __FILE__)
+
 # Oauth context
 require File.expand_path('../models/oauth', __FILE__)
 
