@@ -215,7 +215,7 @@ module CoreNutrition
       #
       # @return [Timezone,NilClass]
       def start_at_timezone_record
-        Timezone[self.start_at_timezone_value]
+        ::Timezone[self.start_at_timezone_value]
       end
 
       # Returns the date value
