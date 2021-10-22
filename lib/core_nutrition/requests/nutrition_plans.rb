@@ -13,7 +13,6 @@ module CoreNutrition
 
         request = CoreNutrition::Client.connection.get do |req|
           req.url(url)
-          req.headers['Accept'] = 'application/vnd.core+json; version=1'
         end
 
         CoreNutrition::Response.new(request)
@@ -34,7 +33,6 @@ module CoreNutrition
 
         request = CoreNutrition::Client.connection.get do |req|
           req.url(url)
-          req.headers['Accept'] = 'application/vnd.core+json; version=1'
         end
 
         CoreNutrition::Response.new(request)

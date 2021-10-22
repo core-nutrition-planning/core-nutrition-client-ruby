@@ -12,7 +12,7 @@ module CoreNutrition
     module Default
       API_HOST     = 'http://api.dev.fuelthecore.com'.freeze
       USER_AGENT   = ("CORE Ruby Gem %s" % [CoreNutrition::Client::VERSION]).freeze
-      MEDIA_TYPE   = 'application/json'.freeze
+      MEDIA_TYPE   = 'application/vnd.core+json; version=2'.freeze
       CONTENT_TYPE = 'application/json'.freeze
 
       # Return the collection of default options and values
