@@ -23,6 +23,42 @@ module CoreNutrition
         @attributes['id']
       end
 
+      def caffeine_sensitivity_category_id
+        @attributes['caffeine_sensitivity_category_id']
+      end
+
+      def caffeine_sensitivity_category
+        @caffeine_sensitivity_category ||= CoreNutrition::Models::CaffeineSensitivityCategories.retrieve(self.caffeine_sensitivity_category_id)
+      end
+
+      def caffeine_sensitivity_category?
+        !self.caffeine_sensitivity_category.nil?
+      end
+
+      def carbohydrate_training_frequency_category_id
+        @attributes['carbohydrate_training_frequency_category_id']
+      end
+
+      def carbohydrate_training_frequency_category
+        @carbohydrate_training_frequency_category ||= CoreNutrition::Models::CarbohydrateTrainingFrequencyCategories.retrieve(self.carbohydrate_training_frequency_category_id)
+      end
+
+      def carbohydrate_training_frequency_category?
+        !self.carbohydrate_training_frequency_category.nil?
+      end
+
+      def sweat_rate_category_id
+        @attributes['sweat_rate_category_id']
+      end
+
+      def sweat_rate_category
+        @sweat_rate_category ||= CoreNutrition::Models::SweatRateCategories.retrieve(self.sweat_rate_category_id)
+      end
+
+      def sweat_rate_category?
+        !self.sweat_rate_category.nil?
+      end
+
       # Returns the User ID
       #
       # @return [Integer]
