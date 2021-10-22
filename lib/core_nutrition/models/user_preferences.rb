@@ -50,6 +50,20 @@ module CoreNutrition
         end
       end
 
+      def self.update(params={})
+        request = CoreNutrition::Requests::UserPreferences.update(params)
+
+        request.on(:success) do |resp|
+          return CoreNutrition::Models::UserPreference.new(resp.data_attributes)
+        end
+
+        request.on(:failure) do |resp|
+          CoreNutrition::Client.configuration.logger.error { ("Failure updating the user preference: %s" % [resp.status]) }
+
+          return nil
+        end
+      end
+
       def each(&block)
         internal_collection.each(&block)
       end

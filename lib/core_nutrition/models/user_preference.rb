@@ -31,6 +31,10 @@ module CoreNutrition
         !self.system_of_measurement.nil?
       end
 
+      def update(attributes={})
+        CoreNutrition::Models::UserPreferences.update(attributes)
+      end
+
       # Returns the created at timestamp
       #
       # @return [DateTime,NilClass]

@@ -12,6 +12,10 @@ module CoreNutrition
         @attributes = attributes
       end
 
+      def update(attributes={})
+        CoreNutrition::Models::HealthProfiles.update(attributes)
+      end
+
       # Returns the ID
       #
       # @return [Integer]

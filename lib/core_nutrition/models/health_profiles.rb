@@ -50,6 +50,20 @@ module CoreNutrition
         end
       end
 
+      def self.update(params={})
+        request = CoreNutrition::Requests::HealthProfiles.update(params)
+
+        request.on(:success) do |resp|
+          return CoreNutrition::Models::HealthProfile.new(resp.data_attributes)
+        end
+
+        request.on(:failure) do |resp|
+          CoreNutrition::Client.configuration.logger.error { ("Failure updating the health profile: %s" % [resp.status]) }
+
+          return nil
+        end
+      end
+
       def each(&block)
         internal_collection.each(&block)
       end

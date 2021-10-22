@@ -12,11 +12,39 @@ module CoreNutrition
         @attributes = attributes
       end
 
+      def update(attributes={})
+        CoreNutrition::Models::UserProfiles.update(attributes)
+      end
+
       # Returns the ID
       #
       # @return [Integer]
       def id
         @attributes['id']
+      end
+
+      def system_of_measurement_id
+        @attributes['system_of_measurement_id']
+      end
+
+      def system_of_measurement
+        @system_of_measurement ||= CoreNutrition::Models::SystemOfMeasurements.retrieve(self.system_of_measurement_id)
+      end
+
+      def country_id
+        @attributes['country_id']
+      end
+
+      def country
+        @country ||= CoreNutrition::Models::Countries.retrieve(self.country_id)
+      end
+
+      def gender_id
+        @attributes['gender_id']
+      end
+
+      def gender
+        @country ||= CoreNutrition::Models::Genders.retrieve(self.gender_id)
       end
 
       # Returns the User ID
@@ -54,11 +82,11 @@ module CoreNutrition
         @attributes['email']
       end
 
-      # Returns the gender
+      # Returns the gender name
       #
       # @return [String]
-      def gender
-        @attributes['gender']
+      def gender_name
+        @attributes['gender_name']
       end
 
       # Returns the city name
@@ -78,15 +106,15 @@ module CoreNutrition
       # Returns the country name
       #
       # @return [String]
-      def country
-        @attributes['country']
+      def country_code
+        @attributes['country_code']
       end
 
       # Returns the unit of measure name
       #
       # @return [String]
-      def unit_of_measure_name
-        @attributes['unit_of_measure_name']
+      def system_of_measurement_name
+        @attributes['system_of_measurement_name']
       end
 
       # Returns the birth date value
