@@ -1,6 +1,6 @@
 module CoreNutrition
   module Models
-    class Genders
+    class CaffeineSensitivityCategories
       include Enumerable
 
       def initialize(collection)
@@ -12,9 +12,9 @@ module CoreNutrition
       #
       # @param params [Hash]
       #
-      # @return [CoreNutrition::Models::Genders]
+      # @return [CoreNutrition::Models::]
       def self.list(params={})
-        request = CoreNutrition::Requests::Genders.list(params)
+        request = CoreNutrition::Requests::CaffeineSensitivityCategories.list(params)
 
         klass_attributes = []
 
@@ -23,7 +23,7 @@ module CoreNutrition
         end
 
         request.on(:failure) do |resp|
-          CoreNutrition::Client.configuration.logger.error { ("Failure retrieving the genders: %s" % [resp.status]) }
+          CoreNutrition::Client.configuration.logger.error { ("Failure retrieving the records: %s" % [resp.status]) }
         end
 
         self.new(klass_attributes)
@@ -44,16 +44,16 @@ module CoreNutrition
       # @param id [String]
       # @param params [Hash]
       #
-      # @return [CoreNutrition::Models::Gender]
+      # @return [CoreNutrition::Models::CaffeineSensitivityCategory]
       def self.retrieve(id, params={})
-        request = CoreNutrition::Requests::Genders.retrieve(id, params)
+        request = CoreNutrition::Requests::CaffeineSensitivityCategories.retrieve(id, params)
 
         request.on(:success) do |resp|
-          return CoreNutrition::Models::Gender.new(resp.data_attributes)
+          return CoreNutrition::Models::CaffeineSensitivityCategory.new(resp.data_attributes)
         end
 
         request.on(:failure) do |resp|
-          CoreNutrition::Client.configuration.logger.error { ("Failure retrieving the gender: %s" % [resp.status]) }
+          CoreNutrition::Client.configuration.logger.error { ("Failure retrieving the record: %s" % [resp.status]) }
 
           return nil
         end
@@ -66,12 +66,12 @@ module CoreNutrition
       #
       # @raises [CoreNutrition::Errors::RecordNotFoundError]
       #
-      # @return [CoreNutrition::Models::Gender]
+      # @return [CoreNutrition::Models::CaffeineSensitivityCategory]
       def self.retrieve!(id, params={})
-        request = CoreNutrition::Requests::Genders.retrieve(id, params)
+        request = CoreNutrition::Requests::CaffeineSensitivityCategories.retrieve(id, params)
 
         request.on(:success) do |resp|
-          return CoreNutrition::Models::Gender.new(resp.data_attributes)
+          return CoreNutrition::Models::CaffeineSensitivityCategory.new(resp.data_attributes)
         end
 
         request.on(404) do
@@ -98,7 +98,7 @@ module CoreNutrition
 
       private
       def internal_collection
-        @collection.map { |record| CoreNutrition::Models::Gender.new(record) }
+        @collection.map { |record| CoreNutrition::Models::CaffeineSensitivityCategory.new(record) }
       end
     end
   end

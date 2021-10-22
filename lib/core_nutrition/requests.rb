@@ -11,6 +11,7 @@ require File.expand_path('../requests/placements', __FILE__)
 require File.expand_path('../requests/countries', __FILE__)
 require File.expand_path('../requests/system_of_measurements', __FILE__)
 require File.expand_path('../requests/genders', __FILE__)
+require File.expand_path('../requests/caffeine_sensitivity_categories', __FILE__)
 
 # OAuth Base
 require File.expand_path('../requests/oauth', __FILE__)
