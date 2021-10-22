@@ -92,15 +92,15 @@ module CoreNutrition
       # Returns the city name
       #
       # @return [String]
-      def city
-        @attributes['city']
+      def city_value
+        @attributes['city_value']
       end
 
       # Returns the state name
       #
       # @return [String]
-      def state
-        @attributes['state']
+      def state_value
+        @attributes['state_value']
       end
 
       # Returns the country name
