@@ -15,6 +15,9 @@ require File.expand_path('../models/nutrition_plan', __FILE__)
 require File.expand_path('../models/user_profiles', __FILE__)
 require File.expand_path('../models/user_profile', __FILE__)
 
+require File.expand_path('../models/user_preferences', __FILE__)
+require File.expand_path('../models/user_preference', __FILE__)
+
 require File.expand_path('../models/health_profiles', __FILE__)
 require File.expand_path('../models/health_profile', __FILE__)
 
@@ -30,7 +33,11 @@ require File.expand_path('../models/nutritional_value', __FILE__)
 require File.expand_path('../models/placement_nutritional_values', __FILE__)
 require File.expand_path('../models/placement_nutritional_value', __FILE__)
 
+# Framework
 require File.expand_path('../models/unit', __FILE__)
+
+require File.expand_path('../models/countries', __FILE__)
+require File.expand_path('../models/country', __FILE__)
 
 # Oauth context
 require File.expand_path('../models/oauth', __FILE__)
