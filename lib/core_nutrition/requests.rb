@@ -14,6 +14,7 @@ require File.expand_path('../requests/genders', __FILE__)
 require File.expand_path('../requests/caffeine_sensitivity_categories', __FILE__)
 require File.expand_path('../requests/carbohydrate_training_frequency_categories', __FILE__)
 require File.expand_path('../requests/sweat_rate_categories', __FILE__)
+require File.expand_path('../requests/timezones', __FILE__)
 
 # OAuth Base
 require File.expand_path('../requests/oauth', __FILE__)

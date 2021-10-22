@@ -54,6 +54,9 @@ require File.expand_path('../models/carbohydrate_training_frequency_category', _
 require File.expand_path('../models/sweat_rate_categories', __FILE__)
 require File.expand_path('../models/sweat_rate_category', __FILE__)
 
+require File.expand_path('../models/timezones', __FILE__)
+require File.expand_path('../models/timezone', __FILE__)
+
 # Oauth context
 require File.expand_path('../models/oauth', __FILE__)
 
