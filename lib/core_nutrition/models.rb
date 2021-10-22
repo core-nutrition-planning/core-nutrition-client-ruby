@@ -39,6 +39,9 @@ require File.expand_path('../models/unit', __FILE__)
 require File.expand_path('../models/countries', __FILE__)
 require File.expand_path('../models/country', __FILE__)
 
+require File.expand_path('../models/system_of_measurements', __FILE__)
+require File.expand_path('../models/system_of_measurement', __FILE__)
+
 # Oauth context
 require File.expand_path('../models/oauth', __FILE__)
 
