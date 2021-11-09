@@ -22,10 +22,10 @@ module CoreNutrition
           CoreNutrition::Response.new(request)
         end
 
-        def self.update(params={})
+        def self.update(nutrition_plan_id, params={})
           rel   = CoreNutrition::Client.rel_for('rels/nutrition-planner-profile')
           route = CoreNutrition::Client.routes.find_by_rel(rel)
-          url   = route.url_for(params)
+          url   = route.url_for(params.merge!(nutrition_plan_id: nutrition_plan_id.to_s))
 
           request_body = params
 
