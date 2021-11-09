@@ -165,6 +165,13 @@ module CoreNutrition
         alias has_weight_loss_focus? has_weight_loss_focus
         alias weight_loss_focus? has_weight_loss_focus
 
+        # Returns the sweat rate category value
+        #
+        # @return [String]
+        def sweat_rate_category_value
+          @attributes['sweat_rate_category_value']
+        end
+
         # Returns the carbohydrate training frequency value
         #
         # @return [String]
