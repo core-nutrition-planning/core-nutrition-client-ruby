@@ -57,6 +57,9 @@ require File.expand_path('../models/sweat_rate_category', __FILE__)
 require File.expand_path('../models/timezones', __FILE__)
 require File.expand_path('../models/timezone', __FILE__)
 
+# Planner context
+require File.expand_path('../models/planner', __FILE__)
+
 # Oauth context
 require File.expand_path('../models/oauth', __FILE__)
 

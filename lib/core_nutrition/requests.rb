@@ -16,6 +16,9 @@ require File.expand_path('../requests/carbohydrate_training_frequency_categories
 require File.expand_path('../requests/sweat_rate_categories', __FILE__)
 require File.expand_path('../requests/timezones', __FILE__)
 
+# Planner context
+require File.expand_path('../requests/planner', __FILE__)
+
 # OAuth Base
 require File.expand_path('../requests/oauth', __FILE__)
 
