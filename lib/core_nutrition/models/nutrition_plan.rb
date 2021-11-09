@@ -26,6 +26,14 @@ module CoreNutrition
         @attributes['user_id']
       end
 
+      def planner_profile
+        @planner_profile ||= CoreNutrition::Models::Planner::Profiles.retrieve(self.id)
+      end
+
+      def planner_profile?
+        self.planner_profile.present?
+      end
+
       # Returns the Event ID
       #
       # @return [Integer]
