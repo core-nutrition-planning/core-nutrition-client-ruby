@@ -15,6 +15,7 @@ require File.expand_path('../requests/caffeine_sensitivity_categories', __FILE__
 require File.expand_path('../requests/carbohydrate_training_frequency_categories', __FILE__)
 require File.expand_path('../requests/sweat_rate_categories', __FILE__)
 require File.expand_path('../requests/timezones', __FILE__)
+require File.expand_path('../requests/event_goal_types', __FILE__)
 
 # Planner context
 require File.expand_path('../requests/planner', __FILE__)
