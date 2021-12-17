@@ -35,7 +35,7 @@ module CoreNutrition
       end
 
       def planner_event
-        @planner_event ||= CoreNutritionModels::Planner::Events.retrieve(self.id)
+        @planner_event ||= CoreNutrition::Models::Planner::Events.retrieve(self.id)
       end
 
       def planner_event?
