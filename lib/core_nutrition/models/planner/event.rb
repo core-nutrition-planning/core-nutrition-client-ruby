@@ -48,6 +48,7 @@ module CoreNutrition
         end
 
         def event_goal
+          @event_goal ||= CoreNutrition::Models::EventGoals.retrieve(self.event_goal_id)
         end
 
         def event_goal?
