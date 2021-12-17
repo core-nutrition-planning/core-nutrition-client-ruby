@@ -31,7 +31,15 @@ module CoreNutrition
       end
 
       def planner_profile?
-        self.planner_profile.present?
+        !self.planner_profile.nil?
+      end
+
+      def planner_event
+        @planner_event ||= CoreNutritionModels::Planner::Events.retrieve(self.id)
+      end
+
+      def planner_event?
+        !self.planner_event.nil?
       end
 
       # Returns the Event ID
