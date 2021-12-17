@@ -1,0 +1,84 @@
+module CoreNutrition
+  module Models
+    class EventGoal
+      include Comparable
+
+      # Returns an instance of the EventGoal
+      #
+      # @param attributes [Hash]
+      #
+      # @return [CoreNutrition::Models::EventGoal]
+      def initialize(attributes={})
+        @attributes = attributes
+      end
+
+      # Returns the ID
+      #
+      # @return [Integer]
+      def id
+        @attributes['id']
+      end
+
+      def event_goal_type_id
+        @attributes['event_goal_type_id']
+      end
+
+      def event_goal_type
+        @event_goal_type ||= CoreNutrition::Models::EventGoalTypes.retrieve(self.event_goal_type_id)
+      end
+
+      def event_goal_type?
+        !self.event_goal_type.nil?
+      end
+
+      def name
+        @attributes['name']
+      end
+
+      def is_active
+        @attributes.fetch('is_active', false)
+      end
+      alias active? is_active
+
+      def sort_order
+        @attributes.fetch('sort_order', 0)
+      end
+
+      # Returns the links attributes
+      #
+      # @return [Array]
+      def links_attributes
+        @attributes.fetch('links', [])
+      end
+
+      # Returns the Links
+      #
+      # @return [CoreNutrition::Models::Links]
+      def links
+        @links ||= CoreNutrition::Models::Links.new(self.links_attributes)
+      end
+
+      # Returns true if there are any links
+      #
+      # @return [Boolean]
+      def links?
+        self.links.any?
+      end
+
+      # Returns the record as an array
+      #
+      # @return [Array]
+      def to_a
+        [self.id, self.name]
+      end
+
+      def to_attributes
+        @attributes
+      end
+
+      def to_option
+        [self.name, self.id]
+      end
+    end
+  end
+end

@@ -51,6 +51,9 @@ require File.expand_path('../models/caffeine_sensitivity_category', __FILE__)
 require File.expand_path('../models/event_goal_types', __FILE__)
 require File.expand_path('../models/event_goal_type', __FILE__)
 
+require File.expand_path('../models/event_goals', __FILE__)
+require File.expand_path('../models/event_goal', __FILE__)
+
 require File.expand_path('../models/event_user_types', __FILE__)
 require File.expand_path('../models/event_user_type', __FILE__)
 

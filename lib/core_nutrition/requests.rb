@@ -17,6 +17,7 @@ require File.expand_path('../requests/sweat_rate_categories', __FILE__)
 require File.expand_path('../requests/timezones', __FILE__)
 require File.expand_path('../requests/event_goal_types', __FILE__)
 require File.expand_path('../requests/event_user_types', __FILE__)
+require File.expand_path('../requests/event_goals', __FILE__)
 
 # Planner context
 require File.expand_path('../requests/planner', __FILE__)
