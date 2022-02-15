@@ -90,6 +90,13 @@ module CoreNutrition
           @attributes['sweat_rate_value']
         end
 
+        # Returns the sweat rate category name
+        #
+        # @return [String]
+        def sweat_rate_category_name
+          @attributes['sweat_rate_category_name']
+        end
+
         # Returns the sweat rate unit attributes
         #
         # @return [Hash]
