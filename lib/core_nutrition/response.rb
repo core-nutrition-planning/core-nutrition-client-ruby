@@ -51,6 +51,10 @@ module CoreNutrition
       self.headers.fetch('allow', '')
     end
 
+    def location_header
+      self.headers.fetch('location', '')
+    end
+
     def json?
       self.body.is_a?(Hash)
     end
