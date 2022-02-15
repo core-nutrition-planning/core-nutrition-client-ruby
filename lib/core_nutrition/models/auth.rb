@@ -1,5 +1,8 @@
 require File.expand_path('../auth/profile', __FILE__)
 
+require File.expand_path('../auth/providers', __FILE__)
+require File.expand_path('../auth/provider', __FILE__)
+
 module CoreNutrition
   module Models
     module Auth
