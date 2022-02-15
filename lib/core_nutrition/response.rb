@@ -4,6 +4,8 @@ require 'delegate'
 
 module CoreNutrition
   class Response < SimpleDelegator
+    STATUS_CREATED = 201
+
     STATUS_MAP = {
       :failure      => (400...500),
       :redirect     => (300...400),
@@ -53,6 +55,10 @@ module CoreNutrition
 
     def location_header
       self.headers.fetch('location', '')
+    end
+
+    def created?
+      self.status == STATUS_CREATED
     end
 
     def json?
