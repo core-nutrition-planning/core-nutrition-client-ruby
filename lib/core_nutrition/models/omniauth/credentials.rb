@@ -11,7 +11,7 @@ module CoreNutrition
         #
         # @return [CoreNutrition::Models::Omniauth::Credentials]
         def initialize(attributes={})
-          @attributes = attributes
+          @attributes = Hash(attributes)
         end
 
         # Returns the token
@@ -21,6 +21,20 @@ module CoreNutrition
           @attributes['token']
         end
         alias access_token token
+
+        # Returns the OAuth token
+        #
+        # @return [CoreNutrition::Models::Oauth::Token, NilClass]
+        def oauth_token
+          @oauth_token ||= CoreNutrition::Models::Oauth::Token.retrieve(self.token)
+        end
+
+        # Returns true if there is a corresponding oauth token
+        #
+        # @return [Boolean]
+        def oauth_token?
+          !self.oauth_token.nil?
+        end
 
         # Returns the JWT decoded
         #
@@ -58,6 +72,13 @@ module CoreNutrition
         end
         alias expires? expires
         alias does_expire? expires
+
+        # Return the record attributes
+        #
+        # @return [Hash]
+        def to_attributes
+          @attributes
+        end
       end
     end
   end

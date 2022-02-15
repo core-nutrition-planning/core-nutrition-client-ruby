@@ -1,3 +1,5 @@
+require 'jwt'
+
 module CoreNutrition
   module Models
     module Oauth
@@ -9,7 +11,7 @@ module CoreNutrition
         #
         # @return [CoreNutrition::Models::Oauth::Token]
         def initialize(attributes={})
-          @attributes = attributes
+          @attributes = Hash(attributes)
         end
 
         def self.refresh(token, params={})
@@ -91,6 +93,14 @@ module CoreNutrition
         def access_token
           @attributes['access_token']
         end
+        alias token access_token
+
+        # Returns the JWT decoded
+        #
+        # @return [Hash]
+        def jwt
+          JWT.decode(self.access_token, ENV['CORE_CLIENT_SECRET'], true, { algorithm: 'HS256' })
+        end
 
         def retrieve
           self.class.retrieve(self.access_token)
@@ -108,8 +118,29 @@ module CoreNutrition
           @attributes['expires_in'].to_i
         end
 
+        def expires
+          !self.expires_in.nil?
+        end
+        alias expires? expires
+        alias does_expire? expires
+
+        def expires_at
+          (self.created_at.to_time + self.expires_in)
+        end
+
         def scope
           @attributes.fetch('scope', [])
+        end
+
+        def auth_profile
+          CoreNutrition::Models::Auth::Profile.retrieve
+        end
+
+        # Retun the record attributes
+        #
+        # @return [Hash]
+        def to_attributes
+          @attributes
         end
 
         # Returns the created at timestamp

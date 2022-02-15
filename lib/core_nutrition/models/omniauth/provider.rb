@@ -9,7 +9,7 @@ module CoreNutrition
         #
         # @return [CoreNutrition::Models::Omniauth::Provider]
         def initialize(attributes={})
-          @attributes = attributes
+          @attributes = Hash(attributes)
         end
 
         # Returns the provider name
@@ -52,6 +52,10 @@ module CoreNutrition
         # @return [CoreNutrition::Models::Omniauth::Credentials]
         def credentials
           CoreNutrition::Models::Omniauth::Credentials.new(self.credentials_attributes)
+        end
+
+        def to_attributes
+          @attributes
         end
       end
     end
