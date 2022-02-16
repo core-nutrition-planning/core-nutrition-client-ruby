@@ -28,6 +28,9 @@ require File.expand_path('../requests/oauth', __FILE__)
 # Auth Base
 require File.expand_path('../requests/auth', __FILE__)
 
+# System Utilities
+require File.expand_path('../requests/health', __FILE__)
+
 module CoreNutrition
   module Requests
   end

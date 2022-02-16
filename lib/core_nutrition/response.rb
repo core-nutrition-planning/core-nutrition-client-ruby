@@ -5,6 +5,7 @@ require 'delegate'
 module CoreNutrition
   class Response < SimpleDelegator
     STATUS_CREATED = 201
+    STATUS_OK      = 200
 
     STATUS_MAP = {
       :failure      => (400...500),
@@ -58,7 +59,11 @@ module CoreNutrition
     end
 
     def created?
-      self.status == STATUS_CREATED
+      STATUS_CREATED == self.status
+    end
+
+    def ok?
+      STATUS_OK == self.status
     end
 
     def json?
