@@ -9,10 +9,10 @@ module CoreNutrition
         end
 
         def self.create(params={})
-          request = CoreNutrition::Requests::ResetPasswords.create(params)
+          request = CoreNutrition::Requests::Auth::ResetPasswords.create(params)
 
           request.on(:success) do |resp|
-            return CoreNutrition::Models::ResetPasswords.new(resp.data_attributes)
+            return CoreNutrition::Models::Auth::ResetPasswords.new(resp.data_attributes)
           end
 
           request.on(:failure) do |resp|
@@ -23,10 +23,10 @@ module CoreNutrition
         end
 
         def self.retrieve(id, params={})
-          request = CoreNutrition::Requests::ResetPasswords.retrieve(id, params)
+          request = CoreNutrition::Requests::Auth::ResetPasswords.retrieve(id, params)
 
           request.on(:success) do |resp|
-            return CoreNutrition::Models::ResetPassword.new(resp.data_attributes)
+            return CoreNutrition::Models::Auth::ResetPassword.new(resp.data_attributes)
           end
 
           request.on(:failure) do |resp|
@@ -47,10 +47,10 @@ module CoreNutrition
         end
 
         def self.update(id, params={})
-          request = CoreNutrition::Requests::ResetPasswords.update(id, params)
+          request = CoreNutrition::Requests::Auth::ResetPasswords.update(id, params)
 
           request.on(:success) do |resp|
-            return CoreNutrition::Models::ResetPassword.new(resp.data_attributes)
+            return CoreNutrition::Models::Auth::ResetPassword.new(resp.data_attributes)
           end
 
           request.on(:failure) do |resp|
@@ -76,7 +76,7 @@ module CoreNutrition
 
         private
         def internal_collection
-          @collection.map { |record| CoreNutrition::Models::ResetPassword.new(record) }
+          @collection.map { |record| CoreNutrition::Models::Auth::ResetPassword.new(record) }
         end
       end
     end
